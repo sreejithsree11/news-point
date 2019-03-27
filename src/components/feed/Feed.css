@@ -1,0 +1,16 @@
+.feed-container {
+    padding: 10px;
+}
+
+.mdl-card.mdl-shadow--2dp.feed-container {
+    margin-bottom: 10px !important;
+}
+
+.feed-container .mdl-card__title-text {
+    text-shadow: #000 1px 0 10px;
+}
+
+.btn-href {
+    text-decoration: none;
+    color: rgb(63,81,181);
+}
