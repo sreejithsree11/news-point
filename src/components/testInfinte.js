@@ -89,6 +89,7 @@ class TestInfinte extends Component {
         // }, 1500);
         let pageCount = this.state.pageNumber + 1;
         await this.fetchTheNews(pageCount);
+        return;
       };
     render() {
         const { error, isLoaded, items } = this.state;
@@ -125,11 +126,18 @@ class TestInfinte extends Component {
           });
   
         //   return  <div>{ newsList }</div>
+        console.log(this.state.hasMore);
             return <InfiniteScroll
                 dataLength={this.state.totalResults}
                 next={this.fetchMoreData}
                 hasMore= {this.state.hasMore}
-                loader={<h4>Loading...</h4>}>
+                loader={<h4>Loading...</h4>}
+                endMessage={
+                  <p style={{textAlign: 'center'}}>
+                    <b>Yay! You have seen it all</b>
+                  </p>
+                }
+                >
                 { newsList }
             </InfiniteScroll>
         }

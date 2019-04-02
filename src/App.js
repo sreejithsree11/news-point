@@ -14,6 +14,7 @@ class App extends Component {
                 <Navigation>
                   <a href="/">Home</a>
                   <a href="/test">Test</a>
+                  <a href="/test1">Test1</a>
                 </Navigation>
             </Header>
             {/* <Drawer title="Title">
