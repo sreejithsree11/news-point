@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Layout, Drawer, Header, Navigation, Content } from 'react-mdl';
+import { Layout,Textfield, Drawer, Header, Navigation, Content } from 'react-mdl';
 import Feed from './components/feed/Feed';
 import Main from './components/main';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+const style = {
+  fontFamily: 'Pacifico',
+  fontSize: '1.5em', 
+  fontStyle: 'italic'
+}
 class App extends Component {
   render() {
     return (
@@ -10,25 +17,32 @@ class App extends Component {
         <Layout fixedHeader>
             <Header 
               className = "fixed-header"
-              title={<span><span style={{ color: '#ddd' }}></span><strong>News Point</strong></span>}>
+              title={<span><span style={{ color: '#ddd' }}></span>
+                <strong style={style}>News Point</strong>
+              </span>}>
+              <Navigation>
+                  <a href="/">Home</a>
+                  <a href="/job">Job</a>
+                </Navigation>
+              <Textfield
+                value=""
+                onChange={() => {}}
+                label="Search"
+                expandable
+                expandableIcon="search"
+              />
+                
+            </Header>
+            <Drawer title="Title">
                 <Navigation>
                   <a href="/">Home</a>
-                  <a href="/test">Test</a>
-                  <a href="/test1">Test1</a>
+                  <a href="/job">Job</a>
                 </Navigation>
-            </Header>
-            {/* <Drawer title="Title">
-                <Navigation>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
-                </Navigation>
-            </Drawer> */}
+            </Drawer>
             <Content />
         </Layout>
         <div style={{height: '90px'}} ></div>
-        {/* <Feed /> */}
+        
         <Main />
     </div>
     );
