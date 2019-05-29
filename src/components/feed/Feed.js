@@ -3,7 +3,7 @@ import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Card, CardMenu, IconButton, CardTitle, CardText, CardActions, Button } from 'react-mdl';
 import API from '../../api/api';  
-
+import './Feed.css';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
@@ -61,14 +61,25 @@ class Feed extends React.Component {
         }
         return (
           <div>
-           
             <InfiniteScroll
               dataLength={this.state.items.length}
               next={this.fetchMoreData}
               hasMore={this.state.hasMore}
-              loader={<p style={{textAlign: 'center'}}>
-                        <b>Loading..!!</b>
-                      </p>}
+              loader={ <div className="timeline-wrapper">
+                <div className="timeline-item">
+                    <div className="animated-background">
+                    </div>
+                    <div className="timeline-content">
+                            <div className="background-masker header-top"></div>
+                            <div className="background-masker header-left"></div>
+                            <div className="background-masker header-right"></div>
+                            <div className="background-masker header-bottom"></div>
+                            <div className="background-masker subheader-left"></div>
+                            <div className="background-masker subheader-right"></div>
+                            <div className="background-masker subheader-bottom"></div>
+                    </div>
+                </div>
+            </div>}
               endMessage={
                 <p style={{textAlign: 'center'}}>
                   <b>Yay! You have seen it all</b>
@@ -79,7 +90,7 @@ class Feed extends React.Component {
                 <Card
                  key ={i}
                  className ="feed-container"
-                  shadow={0} style={{width: '512px', margin: 'auto'}}
+                  shadow={0} style={{width: '512px', margin: 'auto', marginBottom: '10px'}}
                   >
                  <CardTitle style={{
                    background: `url(${item.urlToImage}) center / cover`,
