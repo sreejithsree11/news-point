@@ -70,13 +70,13 @@ class Feed extends React.Component {
                     <div className="animated-background">
                     </div>
                     <div className="timeline-content">
-                            <div className="background-masker header-top"></div>
-                            <div className="background-masker header-left"></div>
-                            <div className="background-masker header-right"></div>
-                            <div className="background-masker header-bottom"></div>
-                            <div className="background-masker subheader-left"></div>
-                            <div className="background-masker subheader-right"></div>
-                            <div className="background-masker subheader-bottom"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
+                            <div className="background-masker"></div>
                     </div>
                 </div>
             </div>}
